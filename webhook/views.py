@@ -11,31 +11,6 @@ import json
 from django.http import HttpResponse, JsonResponse
 
 
-# @csrf_exempt
-# def stripe_webhook(request):
-#
-#     if request.method == 'POST':
-#
-#         payload = request.body
-#
-#         try:
-#             event = stripe.Event.construct_from(
-#                 json.loads(payload), stripe.api_key
-#             )
-#         except ValueError:
-#             return HttpResponse(status=400)
-#
-#         # Handle the event
-#         if event.type == 'customer.subscription.created':
-#             sub_id = event.data.object.id  # contains a
-#             Stripe.objects.create(subscription_id=sub_id)
-#
-#         else:
-#             print('Unhandled event type {}'.format(event.type))
-#
-#         return HttpResponse(status=200)
-
-
 def buy_view(request):
     return render(request, 'main.html')
 
